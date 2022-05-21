@@ -4,7 +4,7 @@
     {
         public FederalSubject()
         {
-            Maps = new HashSet<Map>();
+            Map = new HashSet<Map>();
         }
 
         public short Id { get; set; }
@@ -16,6 +16,6 @@
 
         public virtual FederalDistrict FederalDistrict { get; set; } = null!;
         public virtual FederalSubjectType FederalSubjectType { get; set; } = null!;
-        public virtual ICollection<Map> Maps { get; set; }
+        public virtual ICollection<Map> Map { get; set; }
     }
 }

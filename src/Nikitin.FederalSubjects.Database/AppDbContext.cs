@@ -8,7 +8,7 @@ namespace Nikitin.FederalSubjects.Database
         public virtual DbSet<FederalDistrict> FederalDistricts { get; set; } = null!;
         public virtual DbSet<FederalSubject> FederalSubjects { get; set; } = null!;
         public virtual DbSet<FederalSubjectType> FederalSubjectTypes { get; set; } = null!;
-        public virtual DbSet<Map> Maps { get; set; } = null!;
+        public virtual DbSet<Map> Map { get; set; } = null!;
 
         public AppDbContext()
         {
@@ -76,7 +76,7 @@ namespace Nikitin.FederalSubjects.Database
                 entity.Property(e => e.Path).HasColumnName("path");
 
                 entity.HasOne(d => d.FederalSubject)
-                    .WithMany(p => p.Maps)
+                    .WithMany(p => p.Map)
                     .HasForeignKey(d => d.FederalSubjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("map_federal_subject_id_fkey");
