@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext -Connection "server=localhost;username=postgres;password=signed123;database=Nikitin.FederalSubjects;" -Provider Npgsql.EntityFrameworkCore.PostgreSQL -Project Nikitin.FederalSubjects.Database -OutputDir "Models\DbModels" -ContextDir "." -Context "AppDbContext" -NoOnConfiguring -Force
