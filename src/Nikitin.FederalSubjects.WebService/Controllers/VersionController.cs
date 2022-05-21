@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Nikitin.FederalSubjects.WebService.Models;
+using Nikitin.FederalSubjects.WebService.Responses;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Reflection;
 
@@ -11,10 +11,10 @@ namespace Nikitin.FederalSubjects.WebService.Controllers;
 public class VersionController : ControllerBase
 {
     [HttpGet]
-    [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(VersionModel))]
+    [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(VersionResponse))]
     public IActionResult GetVersion() =>
         new OkObjectResult(
-            new VersionModel
+            new VersionResponse
             {
                 Version = Assembly.GetExecutingAssembly().GetName().Version?.ToString()
             }

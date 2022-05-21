@@ -1,16 +1,32 @@
 ﻿using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
+using Nikitin.FederalSubjects.WebService.Extensions;
+using Nikitin.FederalSubjects.WebService.Models;
 
 namespace Nikitin.FederalSubjects.WebService;
 
 public class Startup
 {
+    private readonly ConfigurationModel _configuration;
+
+    public Startup(IConfiguration configuration)
+    {
+        _configuration = configuration.Get<ConfigurationModel>();
+    }
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.Configure<RouteOptions>(options => { options.LowercaseUrls = true; });
 
         services.AddControllers().AddNewtonsoftJson();
+
+        services.AddConfiguration(_configuration);
+
+        services.AddNewtonsoftSnakeCaseNamingStrategy();
+        services.AddNewtonsoftSnakeCaseNamingStrategyInControllers();
+
+        services.AddDatabase(_configuration.ConnectionStrings.DefaultConnection);
 
         services.AddSwaggerGenNewtonsoftSupport();
         services.AddSwaggerGen(x =>
