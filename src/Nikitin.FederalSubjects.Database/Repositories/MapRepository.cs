@@ -29,13 +29,11 @@ public class MapRepository : IMapRepository
                         Id = x.Id,
                         Name = x.Name,
                         Description = x.Description,
-
                         FederalDistrict = new()
                         {
                             Id = x.Id,
                             Name = x.Name
                         },
-
                         FederalSubjectType = new()
                         {
                             Id = x.Id,

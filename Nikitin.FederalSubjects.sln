@@ -5,9 +5,13 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{854531AC-F0CB-4139-BA89-04623C64ECC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.WebService", "src\Nikitin.FederalSubjects.WebService\Nikitin.FederalSubjects.WebService.csproj", "{E6DEAC96-8EC4-4307-8785-C012C407433B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nikitin.FederalSubjects.WebService", "src\Nikitin.FederalSubjects.WebService\Nikitin.FederalSubjects.WebService.csproj", "{E6DEAC96-8EC4-4307-8785-C012C407433B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.Database", "src\Nikitin.FederalSubjects.Database\Nikitin.FederalSubjects.Database.csproj", "{EC1DD6BB-27AC-481B-998E-64A9D8963C71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nikitin.FederalSubjects.Database", "src\Nikitin.FederalSubjects.Database\Nikitin.FederalSubjects.Database.csproj", "{EC1DD6BB-27AC-481B-998E-64A9D8963C71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{99F105D2-B95B-4A48-88D4-2C3B5BF39FCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.Database.Tests", "tests\Nikitin.FederalSubjects.Database.Tests\Nikitin.FederalSubjects.Database.Tests.csproj", "{9A8BF64F-D29E-4CEB-A17A-071C6FA8C105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,10 @@ Global
 		{EC1DD6BB-27AC-481B-998E-64A9D8963C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC1DD6BB-27AC-481B-998E-64A9D8963C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC1DD6BB-27AC-481B-998E-64A9D8963C71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A8BF64F-D29E-4CEB-A17A-071C6FA8C105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8BF64F-D29E-4CEB-A17A-071C6FA8C105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8BF64F-D29E-4CEB-A17A-071C6FA8C105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8BF64F-D29E-4CEB-A17A-071C6FA8C105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E6DEAC96-8EC4-4307-8785-C012C407433B} = {854531AC-F0CB-4139-BA89-04623C64ECC7}
 		{EC1DD6BB-27AC-481B-998E-64A9D8963C71} = {854531AC-F0CB-4139-BA89-04623C64ECC7}
+		{9A8BF64F-D29E-4CEB-A17A-071C6FA8C105} = {99F105D2-B95B-4A48-88D4-2C3B5BF39FCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F25D6C6F-7B78-46DD-81B6-00E848075AB1}
