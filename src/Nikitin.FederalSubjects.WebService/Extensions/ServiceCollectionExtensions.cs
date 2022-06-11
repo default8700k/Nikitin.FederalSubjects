@@ -35,6 +35,8 @@ public static class ServiceCollectionExtensions
             x.UseNpgsql(connectionString)
         );
 
+        services.AddTransient<IFederalDistrictRepository, FederalDistrictRepository>();
+        services.AddTransient<IFederalSubjectTypeRepository, FederalSubjectTypeRepository>();
         services.AddTransient<IMapRepository, MapRepository>();
         return services;
     }
