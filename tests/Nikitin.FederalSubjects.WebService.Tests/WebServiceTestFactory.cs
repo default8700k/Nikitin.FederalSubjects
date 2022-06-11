@@ -20,13 +20,22 @@ public class WebServiceTestFactory : WebApplicationFactory<Startup>
         HttpClient = base.CreateClient();
     }
 
-    public AppDbContext GetDbContext() =>
-        new(
+    public AppDbContext GetDbContext(bool ensureDeleted = false)
+    {
+        var dbContext = new AppDbContext(
             options: new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase(_databaseName)
                 .ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning))
                 .Options
         );
+
+        if (ensureDeleted)
+        {
+            dbContext.Database.EnsureDeleted();
+        }
+
+        return dbContext;
+    }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
