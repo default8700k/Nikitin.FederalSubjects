@@ -15,8 +15,6 @@ public class MapRepository : IMapRepository
 
     public async Task<IEnumerable<MapModel>> GetMapAsync() =>
         await _dbContext.FederalSubjects
-            .Include(x => x.FederalDistrict)
-            .Include(x => x.FederalSubjectType)
             .Include(x => x.Map)
             .Where(x =>
                 x.Map.Any(f =>
@@ -29,18 +27,10 @@ public class MapRepository : IMapRepository
                     FederalSubject = new()
                     {
                         Id = x.Id,
+                        FederalDistrictId = x.FederalDistrictId,
+                        FederalSubjectTypeId = x.FederalSubjectTypeId,
                         Name = x.Name,
-                        Description = x.Description,
-                        FederalDistrict = new()
-                        {
-                            Id = x.FederalDistrict.Id,
-                            Name = x.FederalDistrict.Name
-                        },
-                        FederalSubjectType = new()
-                        {
-                            Id = x.FederalSubjectType.Id,
-                            Name = x.FederalSubjectType.Name
-                        }
+                        Description = x.Description
                     },
                     Paths = x.Map.Select(f => f.Path!)
                 }

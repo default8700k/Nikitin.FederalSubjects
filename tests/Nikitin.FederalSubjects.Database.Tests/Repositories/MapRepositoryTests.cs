@@ -84,18 +84,10 @@ public class MapRepositoryTests
             FederalSubject = new FederalSubjectModel
             {
                 Id = federalSubject.Id,
+                FederalDistrictId = federalSubject.FederalDistrictId,
+                FederalSubjectTypeId = federalSubject.FederalSubjectTypeId,
                 Name = federalSubject.Name,
-                Description = federalSubject.Description,
-                FederalDistrict = new FederalDistrictModel
-                {
-                    Id = federalSubject.FederalDistrict.Id,
-                    Name = federalSubject.FederalDistrict.Name
-                },
-                FederalSubjectType = new FederalSubjectTypeModel
-                {
-                    Id = federalSubject.FederalSubjectType.Id,
-                    Name = federalSubject.FederalSubjectType.Name
-                }
+                Description = federalSubject.Description
             },
             Paths = federalSubject.Map.Select(x => x.Path!)
         };
