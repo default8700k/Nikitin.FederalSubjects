@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Nikitin.FederalSubjects.Database.Models;
 using Nikitin.FederalSubjects.Database.Models.DbModels;
 using Nikitin.FederalSubjects.Database.Repositories;
@@ -34,17 +33,28 @@ public class MapRepositoryTests
         // act
         var result = await _target.GetMapAsync();
 
-        var x = await _dbContext.FederalSubjects.ToListAsync();
-
         // assert
         result.Should().BeEquivalentTo(
             new[] { GetMapModel(federalSubject) }
         );
     }
 
+    [Fact]
+    public async Task GetMapAsync_ShouldBeEmpty()
+    {
+        // setup
+        // nothing
+
+        // act
+        var result = await _target.GetMapAsync();
+
+        // assert
+        result.Should().BeEmpty();
+    }
+
     [Theory]
     [NoRecursionAutoData]
-    public async Task GetMapAsync_ShouldBeEmpty(FederalSubject federalSubject)
+    public async Task GetMapAsync_ShouldBeEmpty_BecauseNoPaths(FederalSubject federalSubject)
     {
         // setup
         federalSubject.Map = Enumerable.Empty<Map>().ToList();
