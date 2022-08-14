@@ -14,13 +14,13 @@ public class VersionController : ControllerBase
     [SwaggerResponse(StatusCodes.Status200OK, Description = "Success", Type = typeof(VersionDto))]
     public IActionResult GetVersion()
     {
-        var versionDto = CreateVersionDto();
+        var versionDto = CreateVersionDto(Assembly.GetExecutingAssembly().GetName().Version);
         return new JsonResult(versionDto);
 
-        static VersionDto CreateVersionDto() =>
+        static VersionDto CreateVersionDto(Version? version) =>
             new()
             {
-                Version = Assembly.GetExecutingAssembly().GetName().Version?.ToString()
+                Version = version?.ToString()
             };
     }
 
