@@ -8,7 +8,7 @@ create table if not exists models.federal_districts (
     id smallserial primary key,
     name varchar(128) not null,
 
-    unique (system_name) -- also unique index
+    unique (name) -- also unique index
 );
 
 create table if not exists models.federal_subject_types (
