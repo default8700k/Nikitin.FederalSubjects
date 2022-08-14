@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CD82A2F8-9F67-488E-B6E8-23FC9C9D308A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.WebService", "src\Nikitin.FederalSubjects.WebService\Nikitin.FederalSubjects.WebService.csproj", "{1FEE74EB-CD24-4D45-A529-9E2B8927C313}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nikitin.FederalSubjects.WebService", "src\Nikitin.FederalSubjects.WebService\Nikitin.FederalSubjects.WebService.csproj", "{1FEE74EB-CD24-4D45-A529-9E2B8927C313}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.Database", "src\Nikitin.FederalSubjects.Database\Nikitin.FederalSubjects.Database.csproj", "{24E62679-A80F-4F1D-929E-5B86C10A9061}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{1FEE74EB-CD24-4D45-A529-9E2B8927C313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FEE74EB-CD24-4D45-A529-9E2B8927C313}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FEE74EB-CD24-4D45-A529-9E2B8927C313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E62679-A80F-4F1D-929E-5B86C10A9061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E62679-A80F-4F1D-929E-5B86C10A9061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E62679-A80F-4F1D-929E-5B86C10A9061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E62679-A80F-4F1D-929E-5B86C10A9061}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1FEE74EB-CD24-4D45-A529-9E2B8927C313} = {CD82A2F8-9F67-488E-B6E8-23FC9C9D308A}
+		{24E62679-A80F-4F1D-929E-5B86C10A9061} = {CD82A2F8-9F67-488E-B6E8-23FC9C9D308A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27D0F2BE-584F-4FE5-9F8E-B68A77CD1772}
